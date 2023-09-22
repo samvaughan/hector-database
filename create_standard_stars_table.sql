@@ -1,0 +1,25 @@
+CREATE TABLE IF NOT EXISTS standard_stars(
+    ID TEXT,
+    RA FLOAT,
+    DEC FLOAT,
+    g_mag FLOAT,
+    r_mag FLOAT,
+    i_mag FLOAT,
+    z_mag FLOAT,
+    y_mag FLOAT,
+    GAIA_g_mag FLOAT,
+    GAIA_bp_mag FLOAT,
+    GAIA_rp_mag FLOAT,
+    Mstar FLOAT,
+    Re FLOAT,
+    z FLOAT,
+    GAL_MU_E_R FLOAT,
+    pmRA FLOAT,
+    pmDEC FLOAT,
+    priority INTEGER,
+    type INTEGER,
+    Field TEXT,
+    Region TEXT,
+    FOREIGN KEY ([ID]) REFERENCES "targets" ([ID])
+                ON DELETE NO ACTION ON UPDATE NO ACTION
+    )
