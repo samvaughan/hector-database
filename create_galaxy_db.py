@@ -145,7 +145,6 @@ all_targets.to_sql("all_targets", con, if_exists="append", index=False)
 
 
 # Finally, make a table of every tile which has been configured- the main thing we need here are the spectrogh and hexabundle each galaxy is in.
-
 configured_tiles = pd.DataFrame()
 base_folder = Path("/Users/samvaughan/Science/Hector/Observing/results/")
 configured_tiles_2023 = (base_folder).glob("2*_2*/Upload/*/Files/Tile*.csv")
@@ -173,13 +172,17 @@ for tile_filename in all_configured_tiles:
         region = "_".join(old_tile_ID.split("_")[1:-1])
     # Get the tile number. Almost always it's the last thing separated by '_'
     # Sometimes the last thing is 'SNAFU', so in that case we take the second last
+    # Finally, a few tiles have funny names so we treat them at the end
     try:
         tile_number = int(old_tile_ID.split("_")[-1])
     except ValueError:
         if old_tile_ID.split("_")[-1].startswith("T"):
             tile_number = int(old_tile_ID.split("_")[-1].strip("T"))
         else:
-            tile_number = int(old_tile_ID.split("_")[-2])
+            try:
+                tile_number = int(old_tile_ID.split("_")[-2])
+            except ValueError:
+                tile_number = int(old_tile_ID.split("_")[2])
     new_tile_ID = f"{region}_{tile_number:05}"
     tmp_df = pd.read_csv(tile_filename, skiprows=11)
     tmp_df = tmp_df.loc[

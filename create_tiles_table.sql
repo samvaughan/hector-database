@@ -55,5 +55,6 @@ CREATE TABLE IF NOT EXISTS tiles(
     Filler_Galaxy INTEGER,
     region TEXT,
     field TEXT,
-    tile_ID TEXT
+    tile_ID TEXT,
+    bad_class TEXT
 )
