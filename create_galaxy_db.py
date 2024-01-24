@@ -103,10 +103,10 @@ for folder, field_name in zip(
         # Now edit the IDs. If the field name starts with W then we're in the WAVES regions
         # Otherwise we're in the clusters.
         # WAVES galaxies have an ID which starts with W, cluster galaxies start with C
-        if field_name.startswith("W"):
-            df["ID"] = df.ID.apply(lambda x: f"W{x}")
-        else:
-            df["ID"] = df.ID.apply(lambda x: f"C{x}")
+        # if field_name.startswith("W"):
+        #     df["ID"] = df.ID.apply(lambda x: f"W{x}")
+        # else:
+        #     df["ID"] = df.ID.apply(lambda x: f"C{x}")
         df.to_sql("galaxies", con, if_exists="append", index=False)
 
     for standard_star_cat_name in standard_stars:
@@ -207,7 +207,7 @@ for tile_filename in all_configured_tiles:
         prefix = "G"
 
     # Check if we have to edit the IDs or not
-    if not np.all(tmp_df["ID"].str.startswith(prefix)):
+    if not np.all(tmp_df.loc[tmp_df["type"] == 1, "ID"].str.startswith(prefix)):
         tmp_df.loc[tmp_df["type"] == 1, "ID"] = tmp_df.loc[tmp_df["type"] == 1].apply(
             lambda x: f"{prefix}{x.ID}", axis=1
         )
