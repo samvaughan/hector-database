@@ -1,0 +1,33 @@
+site_name: Hector Database Documentation
+
+nav:
+  - Home: 'index.md'
+  - Tables:
+    - Overview: 'tables.md'
+    - all_targets: 'Tables/all_targets.md'
+    - configured_tiles: 'Tables/configured_tiles.md'
+    - galaxies: 'Tables/galaxies.md'
+    - guide_stars: 'Tables/guide_stars.md'
+    - observed_tiles: 'Tables/observed_tiles.md'
+    - observers: 'Tables/observers.md'
+    - observers_observing_runs: 'Tables/observers_observing_runs.md'
+    - observing_runs: 'Tables/observing_runs.md'
+    - standard_stars: 'Tables/standard_stars.md'
+    - tiles: 'Tables/tiles.md'
+  - Queries: 'queries.md'
+  - Scripts: 'scripts.md'
+  - Cookbook: 'cookbook.md'
+
+theme: material
+
+markdown_extensions:
+  - pymdownx.arithmatex:
+      generic: true
+
+extra_javascript:
+  - javascripts/katex.js
+  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js
+  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js
+
+extra_css:
+  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css
