@@ -15,7 +15,7 @@
         <link rel="next" href="../cookbook/">
       
       
-      <link rel="icon" href="../assets/images/favicon.png">
+      <link rel="icon" href="../img/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.5">
     
     
@@ -25,6 +25,9 @@
     
     
       <link rel="stylesheet" href="../assets/stylesheets/main.50c56a3b.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -43,8 +46,6 @@
       
     
     
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css">
-    
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -55,7 +56,12 @@
   </head>
   
   
-    <body dir="ltr">
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="indigo">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -64,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#scripts-to-build-this-database" class="md-skip">
+        <a href="#scripts-youll-need" class="md-skip">
           Skip to content
         </a>
       
@@ -82,8 +88,7 @@
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href=".." title="Hector Database Documentation" class="md-header__button md-logo" aria-label="Hector Database Documentation" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+  <img src="../img/favicon.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -107,8 +112,8 @@
       </div>
     </div>
     
+      
     
-      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
     
@@ -177,8 +182,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href=".." title="Hector Database Documentation" class="md-nav__button md-logo" aria-label="Hector Database Documentation" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+  <img src="../img/favicon.png" alt="logo">
 
     </a>
     Hector Database Documentation
@@ -517,6 +521,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Scripts
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -526,6 +541,43 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#after-an-observing-run" class="md-nav__link">
+    <span class="md-ellipsis">
+      After an observing run
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#totally-rebuilding-the-database" class="md-nav__link">
+    <span class="md-ellipsis">
+      Totally rebuilding the database
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -551,6 +603,113 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Other Hector Documentation
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Other Hector Documentation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://samvaughan.info/hector" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://samvaughan.info/hector-observing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Observing Pipeline
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://samvaughan.info/hector-tiling/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tiling
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -571,6 +730,32 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#after-an-observing-run" class="md-nav__link">
+    <span class="md-ellipsis">
+      After an observing run
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#totally-rebuilding-the-database" class="md-nav__link">
+    <span class="md-ellipsis">
+      Totally rebuilding the database
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -584,8 +769,31 @@
                   
 
 
-<h1 id="scripts-to-build-this-database">Scripts to build this database.</h1>
-<p>There are two scripts included</p>
+<h1 id="scripts-youll-need">Scripts you'll need</h1>
+<p>There are two scripts included in the repo to populate the tables. Running the scripts below will delete the tables in the database and repopulate them. Please have a backup copy, especially if you're making changes to the code!</p>
+<h3 id="after-an-observing-run">After an observing run</h3>
+<p>When an observing run is finished, you should update the CSV files in the <code>CSV_files_to_update</code> folder. These keep track of who went observing, the dates of the observing run, and most importantly which tiles were observed. Fill out the new information in the same format as previously, paying close attention to the tile ID. This must be of the format <code>A3376_00033</code>, <code>A3391_A3395_T046</code>, <code>H01_00116</code>, etc, <strong>not</strong> <code>H01_tile_016</code> (for example).</p>
+<p>When you've updated these CSV files, run the script <code>create_and_update_observation_tables.py</code>. This will essentially translate the CSV files into database format. </p>
+<p>You can check that everything has gone to plan by viewing the <code>galaxies_observed</code> table, like so:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">sqlite3</span>
+
+<span class="n">con</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;path/to/hector.db&quot;</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql</span><span class="p">(</span><span class="s2">&quot;select * from galaxies_observed&quot;</span><span class="p">,</span> <span class="n">con</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</code></pre></div>
+<p>You can then check to see that the most recently observed galaxies have made it into that table, save that to a CSV file (or whatever format you like), etc.</p>
+<h3 id="totally-rebuilding-the-database">Totally rebuilding the database</h3>
+<p>The script <code>create_galaxy_db.py</code> will totally recreate the following tables:</p>
+<ul>
+<li><a href="../Tables/all_targets/"><code>all_targets</code></a></li>
+<li><a href="../Tables/configured_tiles/"><code>configured_tiles</code></a></li>
+<li><a href="../Tables/galaxies/"><code>galaxies</code></a></li>
+<li><a href="../Tables/guide_stars/"><code>guide_stars</code></a></li>
+<li><a href="../Tables/standard_stars/"><code>standard_stars</code></a></li>
+<li><a href="../Tables/tiles/"><code>tiles</code></a></li>
+</ul>
+<p>You shouldn't need to run this very often- only in case things go wrong, there's some database error or you want to start again from scratch for some reason. During normal operation of the observing pipeline, new tiles from the big tiling and the tile/robot files are added to the database automatically.</p>
 
 
 
@@ -632,16 +840,16 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.footnote.tooltips"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../assets/javascripts/bundle.c18c5fb9.min.js"></script>
       
-        <script src="../javascripts/katex.js"></script>
+        <script src="../javascripts/mathjax.js"></script>
       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js"></script>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>
