@@ -1,0 +1,1238 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../standard_stars/">
+      
+      
+        <link rel="next" href="../../queries/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.5">
+    
+    
+      
+        <title>tiles - Hector Database Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.50c56a3b.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#tiles" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Hector Database Documentation" class="md-header__button md-logo" aria-label="Hector Database Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Hector Database Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              tiles
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Hector Database Documentation" class="md-nav__button md-logo" aria-label="Hector Database Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Hector Database Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Tables
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Tables
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tables/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../all_targets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    all_targets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configured_tiles/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    configured_tiles
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../galaxies/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    galaxies
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guide_stars/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    guide_stars
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../observed_tiles/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    observed_tiles
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../observers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    observers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../observers_observing_runs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    observers_observing_runs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../observing_runs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    observing_runs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../standard_stars/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    standard_stars
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    tiles
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    tiles
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#columns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Columns
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sql" class="md-nav__link">
+    <span class="md-ellipsis">
+      SQL
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-rows" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example rows
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../queries/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Queries
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../scripts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Scripts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cookbook/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cookbook
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#columns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Columns
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sql" class="md-nav__link">
+    <span class="md-ellipsis">
+      SQL
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-rows" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example rows
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="tiles">tiles</h1>
+<p>This table is the result of every "tiling" run we've completed on each of the Hector regions. It gives information about every target which is included in each tile <em>before</em> that tile has been configured by the observation pipeline (and saved in the <a href="../configured_tiles/">configured_tiles</a> table).</p>
+<p>Note that because this table refers to tiles before they've been configured, a tile can have many more than two standard stars and six guide stars. A galaxy may also appear in more than one tile. </p>
+<h2 id="columns">Columns</h2>
+<ul>
+<li><strong>ID</strong>: Target ID</li>
+<li><strong>RA</strong>: Right Acension coordinate</li>
+<li><strong>DEC</strong>: Declination coordinate</li>
+<li><strong>Re</strong>: Half light radius (<span class="arithmatex">\(r\)</span>-band)</li>
+<li><strong>z</strong>: Redshift</li>
+<li><strong>Mstar</strong>: Stellar mass, as <span class="arithmatex">\(\log_{10}(M_* / M_{\odot})\)</span> </li>
+<li><strong>u_mag</strong>: <span class="arithmatex">\(u\)</span>-band magnitude</li>
+<li><strong>g_mag</strong>: <span class="arithmatex">\(g\)</span>-band magnitude</li>
+<li><strong>r_mag</strong>: <span class="arithmatex">\(r\)</span>-band magnitude</li>
+<li><strong>i_mag</strong>: <span class="arithmatex">\(i\)</span>-band magnitude,</li>
+<li><strong>z_mag</strong>: <span class="arithmatex">\(z\)</span>-band magnitude,</li>
+<li><strong>GAL_MU_E_R</strong>: <span class="arithmatex">\(r\)</span>-band surface brightness (<span class="arithmatex">\(\mu\)</span>) averaged within <span class="arithmatex">\(r_e\)</span>.</li>
+<li><strong>Ellipticity_r</strong>: <span class="arithmatex">\(r\)</span>-band ellipticity.</li>
+<li><strong>RS_member</strong>: Whether the galaxy is a member of its cluster red-sequence. Only applies to targets in a cluster field.</li>
+<li><strong>r_on_rtwo</strong>: Cluster-centric radius divided by the cluster <span class="arithmatex">\(r_{200}\)</span> value. Only applies to targets in a cluster field.</li>
+<li><strong>ClusterName</strong>: Name of the galaxy's cluster. Only applies to targets in a cluster field.</li>
+<li><strong>ClusterMember</strong>: Whether or not the galaxy is a member of its parent cluster, or a foreground target along the same line of sight. Only applies to targets in a cluster field.</li>
+<li><strong>GAL_MU_E_U:</strong> <span class="arithmatex">\(u\)</span>-band surface brightness (<span class="arithmatex">\(\mu\)</span>) averaged within <span class="arithmatex">\(r_e\)</span>.</li>
+<li><strong>GAL_MU_0_U</strong>: Central <span class="arithmatex">\(u\)</span>-band surface brightness (<span class="arithmatex">\(\mu\)</span>).</li>
+<li><strong>GAL_MU_E_G</strong>: <span class="arithmatex">\(g\)</span>-band surface brightness (<span class="arithmatex">\(\mu\)</span>) averaged within <span class="arithmatex">\(r_e\)</span>.</li>
+<li><strong>GAL_MU_0_G</strong>: Central <span class="arithmatex">\(g\)</span>-band surface brightness (<span class="arithmatex">\(\mu\)</span>).</li>
+<li><strong>GAL_MU_0_R</strong>: Central <span class="arithmatex">\(r\)</span>-band surface brightness (<span class="arithmatex">\(\mu\)</span>).</li>
+<li><strong>GAL_MU_E_I</strong>: <span class="arithmatex">\(i\)</span>-band surface brightness (<span class="arithmatex">\(\mu\)</span>) averaged within <span class="arithmatex">\(r_e\)</span>.</li>
+<li><strong>GAL_MU_0_I</strong>: Central <span class="arithmatex">\(i\)</span>-band surface brightness (<span class="arithmatex">\(\mu\)</span>).</li>
+<li><strong>GAL_MU_E_Z</strong>: <span class="arithmatex">\(z\)</span>-band surface brightness (<span class="arithmatex">\(\mu\)</span>) averaged within <span class="arithmatex">\(r_e\)</span>.</li>
+<li><strong>GAL_MU_0_Z</strong>: Central <span class="arithmatex">\(z\)</span>-band surface brightness (<span class="arithmatex">\(\mu\)</span>).</li>
+<li><strong>SersicIndex_r</strong>: <span class="arithmatex">\(r\)</span>-band Sersic index.</li>
+<li><strong>MassHIpred</strong>: Predicted HI mass.</li>
+<li><strong>WALLABYflag</strong>: Whether the target is also in the WALLABY survey.</li>
+<li><strong>Dingoflag</strong> INTEGER: Whether the target is also in the DINGO survey.</li>
+<li><strong>g_m_i</strong>: <span class="arithmatex">\(g - i\)</span> colour.</li>
+<li><strong>IFU_diam_2Re</strong>: Galaxy diameter divided by Hexabundle diameter at 2<span class="arithmatex">\(r_e\)</span>.</li>
+<li><strong>GAL_MU_R_at_2Re</strong>: <span class="arithmatex">\(r\)</span>-band surface brightness at 2<span class="arithmatex">\(r_e\)</span>.</li>
+<li><strong>GAL_MU_R_at_3Re</strong>: <span class="arithmatex">\(r\)</span>-band surface brightness at 3<span class="arithmatex">\(r_e\)</span></li>
+<li><strong>MW_analogue</strong>: Whether the target passes the "Milky Way analague" selection critera.</li>
+<li><strong>EO_wind_galaxy</strong>: Whether the target passes the "Edge-on Winde" selection critera.</li>
+<li><strong>priority</strong>: Tiling priority.</li>
+<li><strong>type</strong>: Integer type of the target. 0 for standard stars, 1 for galaxies, 2 for guide stars.</li>
+<li><strong>y_mag</strong>: <span class="arithmatex">\(y\)</span>-band magnitude.</li>
+<li><strong>GAIA_g_mag</strong>: Gaia <span class="arithmatex">\(g\)</span>-band magnitude.</li>
+<li><strong>GAIA_bp_mag</strong>: Gaia <span class="arithmatex">\(bp\)</span>-band magnitude.</li>
+<li><strong>GAIA_rp_mag</strong>: Gaia <span class="arithmatex">\(rp\)</span>-band magnitude.</li>
+<li><strong>pmRA</strong>: Gaia Proper motion, in milli-arcseconds per year, in the RA direction</li>
+<li><strong>pmDEC</strong>: Gaia Proper motion, in milli-arcseconds per year, in the Declination direction.</li>
+<li><strong>COMPLETED</strong>: Column used and updated by the tiling code- best to ignore.</li>
+<li><strong>remaining_observations</strong>: Column used and updated by the tiling code- best to ignore.</li>
+<li><strong>isel</strong>: Column used and updated by the tiling code- best to ignore.</li>
+<li><strong>MagnetX_noDC</strong>: A very simple (but wrong) attempt to convert RA and DEC to the robot X coordinate. Never use this value!</li>
+<li><strong>MagnetY_noDC</strong>: A very simple (but wrong) attempt to convert RA and DEC to the robot Y coordinate. Never use this value!</li>
+<li><strong>tile_number</strong>: Integer value assigned to the tile by the tiling code.</li>
+<li><strong>tile_centre_RA</strong>: Right Ascension of the centre of the tile this galaxy is assigned to.</li>
+<li><strong>tile_centre_DEC</strong>: Declination of the centre of the tile this galaxy is assigned to.</li>
+<li><strong>Filler_Galaxy</strong>: Whether this galaxy is a "filler" for the given tile.</li>
+<li><strong>Region</strong>: Name of the top level field the target is in. Will be one of "WAVES_N", "WAVES_S" or "Cluster"</li>
+<li><strong>Field</strong>: The name of the region the target is from, e.g. "H01", "G12", "A0119", etc. </li>
+<li><strong>tile_ID</strong>: ID value of the tile. </li>
+<li><strong>bad_class</strong>: Whether this object falls into any of the SAMI "bad classes". 0 means a good target.</li>
+</ul>
+<h2 id="sql">SQL</h2>
+<pre><code class="language-sql">CREATE TABLE tiles(
+    ID TEXT,
+    RA FLOAT,
+    DEC FLOAT,
+    Re FLOAT,
+    z FLOAT,
+    Mstar FLOAT,
+    u_mag FLOAT,
+    g_mag FLOAT,
+    r_mag FLOAT,
+    i_mag FLOAT,
+    z_mag FLOAT,
+    GAL_MU_E_R FLOAT,
+    Ellipticity_r FLOAT,
+    RS_member INTEGER,
+    r_on_rtwo FLOAT,
+    ClusterName TEXT,
+    ClusterMember INTEGER,
+    GAL_MU_E_U FLOAT,
+    GAL_MU_0_U FLOAT,
+    GAL_MU_E_G FLOAT,
+    GAL_MU_0_G FLOAT,
+    GAL_MU_0_R FLOAT,
+    GAL_MU_E_I FLOAT,
+    GAL_MU_0_I FLOAT,
+    GAL_MU_E_Z FLOAT,
+    GAL_MU_0_Z FLOAT,
+    SersicIndex_r FLOAT,
+    MassHIpred FLOAT,
+    WALLABYflag INTEGER,
+    Dingoflag INTEGER,
+    g_m_i FLOAT,
+    IFU_diam_2Re FLOAT,
+    GAL_MU_R_at_2Re FLOAT,
+    GAL_MU_R_at_3Re FLOAT,
+    MW_analogue INTEGER,
+    EO_wind_galaxy INTEGER,
+    priority INTEGER,
+    N_observations_to_complete INTEGER,
+    type INTEGER,
+    y_mag FLOAT,
+    GAIA_g_mag FLOAT,
+    GAIA_bp_mag FLOAT,
+    GAIA_rp_mag FLOAT,
+    pmRA FLOAT,
+    pmDEC FLOAT,
+    COMPLETED INTEGER,
+    remaining_observations INTEGER,
+    isel INTEGER,
+    MagnetX_noDC FLOAT,
+    MagnetY_noDC FLOAT,
+    tile_number FLOAT,
+    tile_centre_RA FLOAT,
+    tile_centre_DEC FLOAT,
+    Filler_Galaxy INTEGER,
+    region TEXT,
+    field TEXT,
+    tile_ID TEXT,
+    bad_class TEXT
+)
+</code></pre>
+<h2 id="example-rows">Example rows</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;"></th>
+<th style="text-align: left;">ID</th>
+<th style="text-align: right;">RA</th>
+<th style="text-align: right;">DEC</th>
+<th style="text-align: right;">Re</th>
+<th style="text-align: right;">z</th>
+<th style="text-align: right;">Mstar</th>
+<th style="text-align: right;">u_mag</th>
+<th style="text-align: right;">g_mag</th>
+<th style="text-align: right;">r_mag</th>
+<th style="text-align: right;">i_mag</th>
+<th style="text-align: right;">z_mag</th>
+<th style="text-align: right;">GAL_MU_E_R</th>
+<th style="text-align: right;">Ellipticity_r</th>
+<th style="text-align: right;">RS_member</th>
+<th style="text-align: right;">r_on_rtwo</th>
+<th style="text-align: left;">ClusterName</th>
+<th style="text-align: right;">ClusterMember</th>
+<th style="text-align: left;">GAL_MU_E_U</th>
+<th style="text-align: left;">GAL_MU_0_U</th>
+<th style="text-align: left;">GAL_MU_E_G</th>
+<th style="text-align: left;">GAL_MU_0_G</th>
+<th style="text-align: left;">GAL_MU_0_R</th>
+<th style="text-align: left;">GAL_MU_E_I</th>
+<th style="text-align: left;">GAL_MU_0_I</th>
+<th style="text-align: left;">GAL_MU_E_Z</th>
+<th style="text-align: left;">GAL_MU_0_Z</th>
+<th style="text-align: left;">SersicIndex_r</th>
+<th style="text-align: left;">MassHIpred</th>
+<th style="text-align: left;">WALLABYflag</th>
+<th style="text-align: left;">Dingoflag</th>
+<th style="text-align: right;">g_m_i</th>
+<th style="text-align: right;">IFU_diam_2Re</th>
+<th style="text-align: left;">GAL_MU_R_at_2Re</th>
+<th style="text-align: left;">GAL_MU_R_at_3Re</th>
+<th style="text-align: right;">MW_analogue</th>
+<th style="text-align: right;">EO_wind_galaxy</th>
+<th style="text-align: right;">priority</th>
+<th style="text-align: right;">N_observations_to_complete</th>
+<th style="text-align: right;">type</th>
+<th style="text-align: right;">y_mag</th>
+<th style="text-align: right;">GAIA_g_mag</th>
+<th style="text-align: right;">GAIA_bp_mag</th>
+<th style="text-align: right;">GAIA_rp_mag</th>
+<th style="text-align: right;">pmRA</th>
+<th style="text-align: right;">pmDEC</th>
+<th style="text-align: right;">COMPLETED</th>
+<th style="text-align: right;">remaining_observations</th>
+<th style="text-align: right;">isel</th>
+<th style="text-align: right;">MagnetX_noDC</th>
+<th style="text-align: right;">MagnetY_noDC</th>
+<th style="text-align: right;">tile_number</th>
+<th style="text-align: right;">tile_centre_RA</th>
+<th style="text-align: right;">tile_centre_DEC</th>
+<th style="text-align: right;">Filler_Galaxy</th>
+<th style="text-align: left;">region</th>
+<th style="text-align: left;">field</th>
+<th style="text-align: left;">tile_ID</th>
+<th style="text-align: left;">bad_class</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">C901032178309088</td>
+<td style="text-align: right;">13.9938</td>
+<td style="text-align: right;">-1.39983</td>
+<td style="text-align: right;">3.5271</td>
+<td style="text-align: right;">0.0432676</td>
+<td style="text-align: right;">8.90158</td>
+<td style="text-align: right;">21.682</td>
+<td style="text-align: right;">19.7581</td>
+<td style="text-align: right;">18.9997</td>
+<td style="text-align: right;">18.7863</td>
+<td style="text-align: right;">18.4773</td>
+<td style="text-align: right;">22.9797</td>
+<td style="text-align: right;">-99999</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.249189</td>
+<td style="text-align: left;">A0119</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: right;">0.971775</td>
+<td style="text-align: right;">14.1084</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">-41919.5</td>
+<td style="text-align: right;">-42211.6</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">14.1792</td>
+<td style="text-align: right;">-1.21305</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">A0119</td>
+<td style="text-align: left;">Cluster</td>
+<td style="text-align: left;">A0119_00000</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">C901032610605729</td>
+<td style="text-align: right;">14.6478</td>
+<td style="text-align: right;">-0.763664</td>
+<td style="text-align: right;">1.86014</td>
+<td style="text-align: right;">0.0439384</td>
+<td style="text-align: right;">8.96826</td>
+<td style="text-align: right;">21.2143</td>
+<td style="text-align: right;">19.9089</td>
+<td style="text-align: right;">19.1189</td>
+<td style="text-align: right;">18.7793</td>
+<td style="text-align: right;">18.6023</td>
+<td style="text-align: right;">21.7095</td>
+<td style="text-align: right;">-99999</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1.17006</td>
+<td style="text-align: left;">A0119</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: right;">1.12961</td>
+<td style="text-align: right;">7.44054</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">105889</td>
+<td style="text-align: right;">101561</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">14.1792</td>
+<td style="text-align: right;">-1.21305</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">A0119</td>
+<td style="text-align: left;">Cluster</td>
+<td style="text-align: left;">A0119_00000</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">C901032322101669</td>
+<td style="text-align: right;">13.299</td>
+<td style="text-align: right;">-1.34657</td>
+<td style="text-align: right;">2.42613</td>
+<td style="text-align: right;">0.0452274</td>
+<td style="text-align: right;">9.48658</td>
+<td style="text-align: right;">19.3702</td>
+<td style="text-align: right;">18.0423</td>
+<td style="text-align: right;">17.4211</td>
+<td style="text-align: right;">17.1349</td>
+<td style="text-align: right;">16.986</td>
+<td style="text-align: right;">20.5885</td>
+<td style="text-align: right;">-99999</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.18942</td>
+<td style="text-align: left;">A0119</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: right;">0.907358</td>
+<td style="text-align: right;">9.70454</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">-198925</td>
+<td style="text-align: right;">-30175.9</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">14.1792</td>
+<td style="text-align: right;">-1.21305</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">A0119</td>
+<td style="text-align: left;">Cluster</td>
+<td style="text-align: left;">A0119_00000</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: right;">3</td>
+<td style="text-align: left;">C901032178500697</td>
+<td style="text-align: right;">14.2646</td>
+<td style="text-align: right;">-1.4119</td>
+<td style="text-align: right;">1.89099</td>
+<td style="text-align: right;">0.0427054</td>
+<td style="text-align: right;">9.36869</td>
+<td style="text-align: right;">20.3163</td>
+<td style="text-align: right;">18.9655</td>
+<td style="text-align: right;">18.1655</td>
+<td style="text-align: right;">17.782</td>
+<td style="text-align: right;">17.5939</td>
+<td style="text-align: right;">20.7918</td>
+<td style="text-align: right;">-99999</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.387329</td>
+<td style="text-align: left;">A0119</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: right;">1.18349</td>
+<td style="text-align: right;">7.56396</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">19283.3</td>
+<td style="text-align: right;">-44939.9</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">14.1792</td>
+<td style="text-align: right;">-1.21305</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">A0119</td>
+<td style="text-align: left;">Cluster</td>
+<td style="text-align: left;">A0119_00000</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: right;">4</td>
+<td style="text-align: left;">C901032754505964</td>
+<td style="text-align: right;">14.3973</td>
+<td style="text-align: right;">-0.400905</td>
+<td style="text-align: right;">1.90943</td>
+<td style="text-align: right;">0.0403539</td>
+<td style="text-align: right;">9.04433</td>
+<td style="text-align: right;">20.8462</td>
+<td style="text-align: right;">19.2946</td>
+<td style="text-align: right;">18.6092</td>
+<td style="text-align: right;">18.2547</td>
+<td style="text-align: right;">18.0909</td>
+<td style="text-align: right;">21.2566</td>
+<td style="text-align: right;">-99999</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.40884</td>
+<td style="text-align: left;">A0119</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: right;">1.03986</td>
+<td style="text-align: right;">7.63772</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">49275.3</td>
+<td style="text-align: right;">183545</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">14.1792</td>
+<td style="text-align: right;">-1.21305</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">A0119</td>
+<td style="text-align: left;">Cluster</td>
+<td style="text-align: left;">A0119_00000</td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c18c5fb9.min.js"></script>
+      
+        <script src="../../javascripts/katex.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>
