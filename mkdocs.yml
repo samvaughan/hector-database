@@ -17,6 +17,11 @@ nav:
   - Queries: 'queries.md'
   - Scripts: 'scripts.md'
   - Cookbook: 'cookbook.md'
+  - Other Hector Documentation: 
+    - Home: https://samvaughan.info/hector
+    - Observing Pipeline: 'https://samvaughan.info/hector-observing/'
+    - Tiling : 'https://samvaughan.info/hector-tiling/'
+
 
 theme: material
 

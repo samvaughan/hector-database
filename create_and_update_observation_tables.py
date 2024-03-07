@@ -31,7 +31,9 @@ cur.executescript(
     """
 )
 
-observing_runs = pd.read_csv("observing_runs.csv", parse_dates=[1, 2])
+observing_runs = pd.read_csv(
+    "CSV_files_to_update/observing_runs.csv", parse_dates=[1, 2]
+)
 # Create the observing runs table
 observing_runs_sql = """
 CREATE TABLE IF NOT EXISTS observing_runs (
@@ -46,7 +48,7 @@ observing_runs.to_sql("observing_runs", conn, if_exists="append", index=False)
 
 
 # create the observers table
-observers = pd.read_csv("observers.csv")
+observers = pd.read_csv("CSV_files_to_update/observers.csv")
 observers_sql = """
 CREATE TABLE IF NOT EXISTS observers (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -62,7 +64,9 @@ observers.to_sql("observers", conn, if_exists="append", index=True, index_label=
 
 
 # Create the join
-observers_observing_runs = pd.read_csv("observers_observing_runs.csv")
+observers_observing_runs = pd.read_csv(
+    "CSV_files_to_update/observers_observing_runs.csv"
+)
 observers_observing_runs_sql = """
 CREATE TABLE IF NOT EXISTS observers_observing_runs (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -82,7 +86,7 @@ observers_observing_runs.to_sql(
 
 # Create the Observed tiles table
 # TODO: make the tile_id a foreign key for the tile table
-observations = pd.read_csv("observed_tiles.csv")
+observations = pd.read_csv("CSV_files_to_update/observed_tiles.csv")
 observations_sql = """
 CREATE TABLE IF NOT EXISTS observed_tiles (
     id INTEGER PRIMARY KEY AUTOINCREMENT,

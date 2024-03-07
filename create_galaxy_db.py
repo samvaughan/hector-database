@@ -5,6 +5,22 @@ import string
 import numpy as np
 
 
+# Important paths for this script!
+# The main path to the Hector folder.
+hector_folder = Path("/Users/samvaughan/Science/Hector/")
+
+# This is the 'observing' folder, where the final tiles we make live
+observing_folder = hector_folder / "Observing/results/"
+
+# This is the folder where all our region catalogues catalogues live
+base_catalogue_folder = (
+    hector_folder / "Targets/HectorInputCatalogues/results/RegionCatalogues/"
+)
+
+# This is the place where the results of the "big tiling" live
+base_tiles_folder = hector_folder / "Targets/Tiling/results/"
+
+
 def get_spectrograph_from_hexabundle(row):
     if row.Hexabundle in (string.ascii_uppercase[:8]):
         return "AAOmega"
@@ -37,27 +53,27 @@ cur.executescript(
 print("Making the tables...")
 # Now make some empty tables with the correct schema
 # Firstly for the galaxies
-with open("create_galaxies_table.sql", "r") as sql_file:
+with open("SQL_scripts/create_galaxies_table.sql", "r") as sql_file:
     galaxies_script = sql_file.read()
 cur.executescript(galaxies_script)
 
 # Now for the standard stars
-with open("create_standard_stars_table.sql", "r") as sql_file:
+with open("SQL_scripts/create_standard_stars_table.sql", "r") as sql_file:
     standard_stars_script = sql_file.read()
 cur.executescript(standard_stars_script)
 
 # And the guide stars
-with open("create_guide_stars_table.sql", "r") as sql_file:
+with open("SQL_scripts/create_guide_stars_table.sql", "r") as sql_file:
     guide_stars_script = sql_file.read()
 cur.executescript(guide_stars_script)
 
 # And the overall targets table
-with open("create_overall_targets_table.sql", "r") as sql_file:
+with open("SQL_scripts/create_overall_targets_table.sql", "r") as sql_file:
     overall_sql = sql_file.read()
 cur.executescript(overall_sql)
 
 # The tiles table
-with open("create_tiles_table.sql", "r") as sql_file:
+with open("SQL_scripts/create_tiles_table.sql", "r") as sql_file:
     tiles_script = sql_file.read()
 cur.executescript(tiles_script)
 
@@ -67,7 +83,7 @@ cur.executescript(tiles_script)
 # cur.executescript(join_script)
 
 # And the configured tiles table
-with open("create_configured_tiles_table.sql", "r") as sql_file:
+with open("SQL_scripts/create_configured_tiles_table.sql", "r") as sql_file:
     configured_tiles_script = sql_file.read()
 cur.executescript(configured_tiles_script)
 
@@ -75,10 +91,7 @@ cur.executescript(configured_tiles_script)
 print("Done")
 
 # Now loop through and fill these
-# This is the base folder where all our catalogues live
-base_catalogue_folder = Path(
-    "/Users/samvaughan/Science/Hector/Targets/HectorInputCatalogues/results/RegionCatalogues/"
-)
+
 
 for folder, field_name in zip(
     ["HectorClusters_including_fg", "WAVES_S", "WAVES_N"],
@@ -146,8 +159,8 @@ all_targets.to_sql("all_targets", con, if_exists="append", index=False)
 
 # Finally, make a table of every tile which has been configured- the main thing we need here are the spectrogh and hexabundle each galaxy is in.
 configured_tiles = pd.DataFrame()
-base_folder = Path("/Users/samvaughan/Science/Hector/Observing/results/")
-configured_tiles_2023 = (base_folder).glob("2*_2*/Upload/*/Files/Tile*.csv")
+
+configured_tiles_2023 = (observing_folder).glob("2*_2*/Upload/*/Files/Tile*.csv")
 configured_tiles_commissioning = Path(
     "Tiles_Observed_pre_June2023/Commissioning/"
 ).glob("*.csv")
@@ -263,11 +276,7 @@ cur.executescript(
 )
 
 # Now make the tiles table
-all_tiles_dfs = list(
-    Path("/Users/samvaughan/Science/Hector/Targets/Tiling/results/").glob(
-        "*/Tiling/*/*/Tiles/tiles_dataframe.csv"
-    )
-)
+all_tiles_dfs = list(base_tiles_folder.glob("*/Tiling/*/*/Tiles/tiles_dataframe.csv"))
 tiles_df = pd.DataFrame()
 # Make the tile database
 for fname in all_tiles_dfs:
