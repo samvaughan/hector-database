@@ -15,7 +15,7 @@
         <link rel="next" href="../scripts/">
       
       
-      <link rel="icon" href="../assets/images/favicon.png">
+      <link rel="icon" href="../img/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.5">
     
     
@@ -25,6 +25,9 @@
     
     
       <link rel="stylesheet" href="../assets/stylesheets/main.50c56a3b.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -43,8 +46,6 @@
       
     
     
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css">
-    
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -55,13 +56,23 @@
   </head>
   
   
-    <body dir="ltr">
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="indigo">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#saved-queries" class="md-skip">
+          Skip to content
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -77,8 +88,7 @@
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href=".." title="Hector Database Documentation" class="md-header__button md-logo" aria-label="Hector Database Documentation" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+  <img src="../img/favicon.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -102,8 +112,8 @@
       </div>
     </div>
     
+      
     
-      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
     
@@ -172,8 +182,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href=".." title="Hector Database Documentation" class="md-nav__button md-logo" aria-label="Hector Database Documentation" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+  <img src="../img/favicon.png" alt="logo">
 
     </a>
     Hector Database Documentation
@@ -489,6 +498,19 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Queries
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -499,6 +521,43 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#all-galaxies-weve-observed-to-date" class="md-nav__link">
+    <span class="md-ellipsis">
+      All galaxies we've observed to date
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-a-new-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating a new view
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -544,6 +603,113 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Other Hector Documentation
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Other Hector Documentation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://samvaughan.info/hector" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://samvaughan.info/hector-observing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Observing Pipeline
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://samvaughan.info/hector-tiling/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tiling
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -561,6 +727,34 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#all-galaxies-weve-observed-to-date" class="md-nav__link">
+    <span class="md-ellipsis">
+      All galaxies we've observed to date
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-a-new-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating a new view
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -575,9 +769,64 @@
                   
 
 
-  <h1>Queries</h1>
+<h1 id="saved-queries">Saved Queries</h1>
+<p>There are a number of useful tables which have been saved as a "view" in the database, i.e. they're easy to access without having to type out the whole query again.</p>
+<p>To access these tables, find the table below which you'd like to view (e.g. <code>galaxies_observed</code>) and do the following:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">sqlite3</span>
 
+<span class="n">con</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;path/to/hector.db&quot;</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql</span><span class="p">(</span><span class="s2">&quot;select * from desired_table_name&quot;</span><span class="p">,</span> <span class="n">con</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="all-galaxies-weve-observed-to-date">All galaxies we've observed to date</h3>
+<p>This query selects all the galaxies which have been observed so far. The table is named "galaxies_observed" and it has the following columns:</p>
+<ul>
+<li><code>row_ID</code>: a combination of tile ID, galaxy ID and run ID (will always be unique).</li>
+<li><code>ID</code>: galaxy ID.</li>
+<li><code>tile_ID</code>: The ID of the tile the galaxy was observed in.</li>
+<li><code>Hexabundle</code>: The hexabundle the galaxy was observed in.</li>
+<li><code>Spectrograph</code>: The spectrograph the galaxy was observed in.</li>
+<li><code>RA</code>: Right Ascension.</li>
+<li><code>DEC</code>: Declination.</li>
+<li><code>type</code>: Object type- will always be 1 in this table.</li>
+<li><code>run_ID</code>: The run ID when this tile was observed.</li>
+</ul>
+<p>The query which creates this view is below:</p>
+<div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">VIEW</span><span class="w"> </span><span class="n">galaxies_observed</span>
+<span class="k">AS</span>
+<span class="k">SELECT</span>
+<span class="w">    </span><span class="n">configured_tiles</span><span class="p">.</span><span class="o">*</span><span class="p">,</span>
+<span class="w">    </span><span class="n">observed_tiles</span><span class="p">.</span><span class="n">run_ID</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">configured_tiles</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="n">observed_tiles</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">observed_tiles</span><span class="p">.</span><span class="n">tile_ID</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">configured_tiles</span><span class="p">.</span><span class="n">tile_ID</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">configured_tiles</span><span class="p">.</span><span class="k">type</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span>
+</code></pre></div>
+<h3 id="creating-a-new-view">Creating a new view</h3>
+<p>To create a new view, add your SQL query to one of the python scripts. For example, to create a view which calculates the number of tiles observed on each run, as well as the average tiles per night of each run, you could do the following:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">sqlite3</span>
 
+<span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;/path/to/hector.db&quot;</span><span class="p">)</span>
+<span class="n">cur</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+<span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    CREATE VIEW tiles_per_observing_run</span>
+<span class="sd">    AS</span>
+<span class="sd">    SELECT observing_runs.run_ID, start_date, end_date, COUNT(observing_runs.run_ID) as N_tiles_observed</span>
+<span class="sd">    from observing_runs</span>
+<span class="sd">    JOIN observed_tiles</span>
+<span class="sd">        ON observing_runs.run_ID = observed_tiles.run_ID</span>
+<span class="sd">    GROUP BY observing_runs.run_ID</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+<span class="p">)</span>
+</code></pre></div>
+<p>This would create a new view to a table which has columns </p>
+<ul>
+<li><code>run_ID</code>.</li>
+<li><code>start_date</code>: the start date of the run.</li>
+<li><code>end_date</code>: the last night of the run.</li>
+<li><code>N_tiles_observed</code>: the total number of tiles observed during the run.</li>
+</ul>
 
 
 
@@ -624,16 +873,16 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.footnote.tooltips"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../assets/javascripts/bundle.c18c5fb9.min.js"></script>
       
-        <script src="../javascripts/katex.js"></script>
+        <script src="../javascripts/mathjax.js"></script>
       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js"></script>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

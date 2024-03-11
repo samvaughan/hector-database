@@ -1,4 +1,4 @@
-# Scripts you'll need
+# Python Scripts
 
 There are two scripts included in the repo to populate the tables. Running the scripts below will delete the tables in the database and repopulate them. Please have a backup copy, especially if you're making changes to the code!
 
